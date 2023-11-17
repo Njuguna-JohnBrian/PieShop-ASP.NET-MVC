@@ -55,7 +55,7 @@ public class MockPieRepository : IPieRepository
             Category = _categoryRepository.AllCategories.ToList()[1],
             ImageUrl =
                 "https://res.cloudinary.com/duaeqqpu7/image/upload/v1700224712/BethanyPieShop/x4dpj1fdo65drmhc3nkw.jpg",
-            IsPieOfTheWeek = false,
+            IsPieOfTheWeek = true,
             ImageThumbnailUrl =
                 "https://res.cloudinary.com/duaeqqpu7/image/upload/v1700224771/BethanyPieShop/rkkw5xullwbwualguwmd.jpg"
         },
@@ -81,7 +81,7 @@ public class MockPieRepository : IPieRepository
             Category = _categoryRepository.AllCategories.ToList()[2],
             ImageUrl =
                 "https://res.cloudinary.com/duaeqqpu7/image/upload/v1700225085/BethanyPieShop/g6jstfozlguifgvmn5bh.jpg",
-            IsPieOfTheWeek = false,
+            IsPieOfTheWeek = true,
             ImageThumbnailUrl =
                 "https://res.cloudinary.com/duaeqqpu7/image/upload/v1700225155/BethanyPieShop/gdnfqm0dehrzptinmilz.jpg"
         },
