@@ -22,6 +22,8 @@ if (app.Environment.IsDevelopment())
     app.UseDeveloperExceptionPage();
 }
 
-app.MapGet("/", () => "Hello World!");
+// This method is an extension method provided by the Microsoft.AspNetCore.Builder namespace.
+// It configures a default route for MVC, which is a convention-based approach to routing in ASP.NET Core
+app.MapDefaultControllerRoute();
 
 app.Run();
