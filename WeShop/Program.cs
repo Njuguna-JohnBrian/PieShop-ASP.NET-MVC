@@ -16,6 +16,9 @@ app.UseStaticFiles();
 
 if (app.Environment.IsDevelopment())
 {
+    //This method is an extension method provided by the Microsoft.AspNetCore.Builder namespace.
+    //When added to the middleware pipeline, it intercepts unhandled exceptions that occur during the processing of an HTTP request
+    //and displays a developer-friendly exception page with detailed information about the exception
     app.UseDeveloperExceptionPage();
 }
 
