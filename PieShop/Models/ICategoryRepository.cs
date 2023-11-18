@@ -1,4 +1,4 @@
-﻿namespace WeShop.Models;
+﻿namespace PieShop.Models;
 
 public interface ICategoryRepository
 {

@@ -1,7 +1,7 @@
 ﻿using Microsoft.AspNetCore.Mvc;
-using WeShop.Models;
+using PieShop.Models;
 
-namespace WeShop.Controllers;
+namespace PieShop.Controllers;
 
 public class PieController : Controller
 {
