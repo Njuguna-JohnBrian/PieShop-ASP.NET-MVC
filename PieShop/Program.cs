@@ -39,4 +39,6 @@ if (app.Environment.IsDevelopment())
 // It configures a default route for MVC, which is a convention-based approach to routing in ASP.NET Core
 app.MapDefaultControllerRoute();
 
+DbInitializer.Seed(app);
+
 app.Run();
