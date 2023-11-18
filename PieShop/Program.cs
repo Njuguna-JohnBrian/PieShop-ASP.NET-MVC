@@ -7,6 +7,10 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
 builder.Services.AddScoped<IPieRepository, PieRepository>();
 
+builder.Services.AddScoped<IShoppingCart, ShoppingCart>(sp => ShoppingCart.GetCart(sp));
+builder.Services.AddSession();
+builder.Services.AddHttpContextAccessor();
+
 
 // This method is an extension method provided by the Microsoft.Extensions.DependencyInjection namespace in ASP.NET Core.
 // It adds the services required for controllers and views to the service collection.
@@ -26,7 +30,7 @@ var app = builder.Build();
 // It adds a middleware to the request pipeline that enables the serving of static files such as images, CSS files, JavaScript files,
 // and other content that doesn't require server-side processing
 app.UseStaticFiles();
-
+app.UseSession();
 if (app.Environment.IsDevelopment())
 {
     //This method is an extension method provided by the Microsoft.AspNetCore.Builder namespace.
