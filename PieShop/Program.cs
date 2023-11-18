@@ -34,6 +34,11 @@ if (app.Environment.IsDevelopment())
     //and displays a developer-friendly exception page with detailed information about the exception
     app.UseDeveloperExceptionPage();
 }
+else
+{
+    app.UseExceptionHandler("/Home/Error");
+    app.UseStatusCodePagesWithReExecute("/Home/Error/{0}");
+}
 
 // This method is an extension method provided by the Microsoft.AspNetCore.Builder namespace.
 // It configures a default route for MVC, which is a convention-based approach to routing in ASP.NET Core
