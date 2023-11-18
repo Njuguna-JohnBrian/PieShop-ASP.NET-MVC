@@ -1,4 +1,10 @@
+using WeShop.Models;
+
 var builder = WebApplication.CreateBuilder(args);
+
+
+builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
+builder.Services.AddScoped<IPieRepository, MockPieRepository>();
 
 // This method is an extension method provided by the Microsoft.Extensions.DependencyInjection namespace in ASP.NET Core.
 // It adds the services required for controllers and views to the service collection.
