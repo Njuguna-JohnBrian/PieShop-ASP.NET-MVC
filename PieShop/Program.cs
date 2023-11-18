@@ -1,3 +1,4 @@
+using Microsoft.EntityFrameworkCore;
 using PieShop.Models;
 
 var builder = WebApplication.CreateBuilder(args);
@@ -6,12 +7,18 @@ var builder = WebApplication.CreateBuilder(args);
 builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
 builder.Services.AddScoped<IPieRepository, MockPieRepository>();
 
+
 // This method is an extension method provided by the Microsoft.Extensions.DependencyInjection namespace in ASP.NET Core.
 // It adds the services required for controllers and views to the service collection.
 // In other words, it sets up the necessary dependencies for handling MVC (Model-View-Controller) patterns in your application
 // The AddControllersWithViews method configures services like model binding, action filters, and other components
 // needed for handling HTTP requests and rendering views
 builder.Services.AddControllersWithViews();
+
+builder.Services.AddDbContext<PieShopDbContext>(options =>
+{
+    options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+});
 
 var app = builder.Build();
 
