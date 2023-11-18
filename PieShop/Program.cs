@@ -4,8 +4,8 @@ using PieShop.Models;
 var builder = WebApplication.CreateBuilder(args);
 
 
-builder.Services.AddScoped<ICategoryRepository, MockCategoryRepository>();
-builder.Services.AddScoped<IPieRepository, MockPieRepository>();
+builder.Services.AddScoped<ICategoryRepository, CategoryRepository>();
+builder.Services.AddScoped<IPieRepository, PieRepository>();
 
 
 // This method is an extension method provided by the Microsoft.Extensions.DependencyInjection namespace in ASP.NET Core.
@@ -17,7 +17,7 @@ builder.Services.AddControllersWithViews();
 
 builder.Services.AddDbContext<PieShopDbContext>(options =>
 {
-    options.UseSqlServer(builder.Configuration["ConnectionStrings:DefaultConnection"]);
+    options.UseSqlServer(builder.Configuration.GetConnectionString("DefaultConnection"));
 });
 
 var app = builder.Build();
