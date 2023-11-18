@@ -11,7 +11,7 @@ using PieShop.Models;
 namespace PieShop.Migrations
 {
     [DbContext(typeof(PieShopDbContext))]
-    [Migration("20231118131124_InitialMigration")]
+    [Migration("20231118133838_InitialMigration")]
     partial class InitialMigration
     {
         protected override void BuildTargetModel(ModelBuilder modelBuilder)
